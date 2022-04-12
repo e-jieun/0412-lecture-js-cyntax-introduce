@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #root{
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+    }
+    #root>section{
+      width: 100px;
+      height: 100px;
+      background-color: #333;
+      margin: 1vw;
+    }
+    /* #root>section:nth-child(1){
+
+    } */
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+
+  <!-- js -->
+  <!-- 나중에 읽도록 하려고 이곳에 배치 -->
+  <script>
+    // camelStyle
+    // css에서 id를 선택자를 선택한 것과 같은 효과
+    const root = document.querySelector('#root');
+    // function: 함수? 기능? 
+    // elements를 보면 문서 자체가 바뀜
+    // => js는 css를 쓰지 않기 때문에 문서 자체에 attribute node?가 붙은 형태로 
+    root.addEventListener('click', function(event){
+      // algorithm
+      event.target.style.backgroundColor = 'salmon';
+      
+      if(event.target.style.backgroundColor === 'salmon'){
+        // 여기서는 조건문이 아니기 때문에 =은 하나만 쓰기
+        event.target.style.backgroundColor = 'green';
+      }
+    })
+    // ------------> 여기까지 dev tool에 console에 아무것도 안 뜨면 잘 작성된 것
+  </script>
+</body>
+</html>
